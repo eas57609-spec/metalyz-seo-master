@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Professional Light Theme Enhancements */
+.light {
+  --background: #fafafa;
+  --foreground: #1a1a1a;
+}
+
+.light body {
+  background: #fafafa;
+  color: #1a1a1a;
+}
+
+/* ULTIMATE CONTRAST FIX - Force white text in ALL dark backgrounds */
+.light .bg-gradient-to-br.from-gray-800,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900,
+.light .bg-gray-800,
+.light .bg-gray-900,
+.light .bg-gray-700\/50,
+.light .dark-bg-white-text,
+.light [class*="from-gray-8"],
+.light [class*="to-gray-9"] {
+  color: #FFFFFF !important;
+}
+
+/* Force ALL children elements to be white in dark backgrounds */
+.light .bg-gradient-to-br.from-gray-800 *,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 *,
+.light .bg-gray-800 *,
+.light .bg-gray-900 *,
+.light .bg-gray-700\/50 *,
+.light .dark-bg-white-text *,
+.light [class*="from-gray-8"] *,
+.light [class*="to-gray-9"] * {
+  color: #FFFFFF !important;
+}
+
+/* SPECIFIC TARGETING - Owner Analytics Dashboard */
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 h1,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 h2,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 h3,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 h4,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 h5,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 h6,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 p,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 span,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 div,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-xl,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-2xl,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-sm,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-xs,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .font-semibold,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .font-bold {
+  color: #FFFFFF !important;
+}
+
+/* SPECIFIC TARGETING - Monthly Revenue, Active Subscriptions boxes */
+.light .bg-gray-700\/50 h1,
+.light .bg-gray-700\/50 h2,
+.light .bg-gray-700\/50 h3,
+.light .bg-gray-700\/50 h4,
+.light .bg-gray-700\/50 h5,
+.light .bg-gray-700\/50 h6,
+.light .bg-gray-700\/50 p,
+.light .bg-gray-700\/50 span,
+.light .bg-gray-700\/50 div,
+.light .bg-gray-700\/50 .text-xl,
+.light .bg-gray-700\/50 .text-2xl,
+.light .bg-gray-700\/50 .text-sm,
+.light .bg-gray-700\/50 .text-xs,
+.light .bg-gray-700\/50 .font-semibold,
+.light .bg-gray-700\/50 .font-bold,
+.light .bg-gray-700\/50 .text-gray-300,
+.light .bg-gray-700\/50 .text-green-400,
+.light .bg-gray-700\/50 .text-blue-400,
+.light .bg-gray-700\/50 .text-purple-400 {
+  color: #FFFFFF !important;
+}
+
+/* NUCLEAR OPTION - Override ALL possible text color classes in dark backgrounds */
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-white,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-gray-100,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-gray-200,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-gray-300,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-gray-400,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-gray-500,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-gray-600,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-gray-700,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-gray-800,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-gray-900,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-green-400,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-blue-400,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-purple-400,
+.light .bg-gradient-to-br.from-gray-800.to-gray-900 .text-yellow-400 {
+  color: #FFFFFF !important;
+}
+
+/* LIGHT THEME TEXT VISIBILITY FIXES - Using text-foreground compatibility */
+.light .text-gray-900,
+.light .text-foreground {
+  color: #000000 !important;
+}
+
+.light .text-gray-800 {
+  color: #1f2937 !important;
+}
+
+.light .text-gray-700 {
+  color: #374151 !important;
+}
+
+.light .text-gray-600 {
+  color: #4b5563 !important;
+}
+
+.light .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.light .text-gray-400 {
+  color: #9ca3af !important;
+}
+
+/* Ensure all headings use foreground color in light mode */
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6 {
+  color: var(--foreground) !important;
+}
+
+/* Ensure all paragraphs use readable color in light mode */
+.light p {
+  color: #374151 !important;
+}
+
+/* Ensure all spans are visible in light mode - compatible with text-foreground */
+.light span:not(.text-white):not([class*="text-blue"]):not([class*="text-green"]):not([class*="text-purple"]):not([class*="text-yellow"]):not([class*="text-red"]) {
+  color: var(--foreground) !important;
+}
+
+/* Button text visibility - foreground compatible */
+.light button:not(.bg-blue-600):not(.bg-green-600):not(.bg-purple-600):not(.bg-red-600) {
+  color: var(--foreground) !important;
+}
+
+/* Input text visibility - foreground compatible */
+.light input {
+  color: var(--foreground) !important;
+}
+
+.light select {
+  color: var(--foreground) !important;
+}
+
+/* SPECIFIC TEXT TARGETING - Light Mode Black Text with foreground fallback */
+.light .welcome-back-text,
+.light .quick-actions-title,
+.light .meta-generator-title,
+.light .profile-settings-title,
+.light .account-settings-title,
+.light .perfect-plan-title,
+.light .faq-title,
+.light .faq-question,
+.light .light-mode-text {
+  color: var(--foreground) !important;
+}
+
+/* Brand logo should ALWAYS remain white/bright for visibility */
+.brand-logo {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+/* Ensure brand visibility in ALL themes - NUCLEAR OPTION */
+.light .brand-logo,
+.dark .brand-logo,
+.brand-logo,
+[class*="brand-logo"] {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Override ANY possible text color on brand logo */
+.light .brand-logo.text-black,
+.light .brand-logo.text-gray-900,
+.light .brand-logo.text-gray-800,
+.light .brand-logo.text-gray-700,
+.light .brand-logo.text-gray-600,
+.light .brand-logo.text-gray-500,
+.light .brand-logo.text-gray-400,
+.light .brand-logo.text-gray-300,
+.light .brand-logo.text-gray-200,
+.light .brand-logo.text-gray-100 {
+  color: #FFFFFF !important;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
