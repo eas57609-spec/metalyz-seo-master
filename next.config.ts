@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Static export configuration
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
+  
   // SSL fix headers
   async headers() {
     return [
